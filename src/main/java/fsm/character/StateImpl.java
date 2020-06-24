@@ -1,4 +1,4 @@
-package fsm;
+package fsm.character;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,12 @@ public final class StateImpl implements State {
         this.isFinal = isFinal;
     }
 
-    public State transit(final CharSequence c) {
+    public State transit(final char c) {
         return transitions
                 .stream()
                 .filter(t -> t.isPossible(c))
-                .map(Transition::state)
-                .findAny()
+                .map(Transition::getNextState)
+                .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(String.valueOf(c)));
     }
 

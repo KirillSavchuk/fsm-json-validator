@@ -1,4 +1,4 @@
-package fsm;
+package fsm.character;
 
 public interface State {
 
@@ -10,7 +10,7 @@ public interface State {
     /**
      * Choose possible transition, to go to the next state.
      */
-    State transit(final CharSequence c);
+    State transit(final char c);
 
     /**
      * Check if the FSM can stop on this state

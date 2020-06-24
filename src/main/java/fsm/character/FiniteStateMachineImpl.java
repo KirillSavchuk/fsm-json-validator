@@ -1,4 +1,4 @@
-package fsm;
+package fsm.character;
 
 public class FiniteStateMachineImpl implements FiniteStateMachine {
 
@@ -12,7 +12,7 @@ public class FiniteStateMachineImpl implements FiniteStateMachine {
     }
 
 
-    public FiniteStateMachineImpl switchState(final CharSequence c) {
+    public FiniteStateMachineImpl switchState(final char c) {
         return new FiniteStateMachineImpl(this.currentState.transit(c));
     }
 
